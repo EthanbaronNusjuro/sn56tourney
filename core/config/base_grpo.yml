@@ -18,7 +18,7 @@ trl:
   beta: 0.04
   max_completion_length: 256
   use_vllm: False
-  num_generations: 4
+  num_generations: 2
 
 sequence_len: 512
 sample_packing: false
@@ -34,11 +34,11 @@ lora_target_linear: true
 lora_fan_in_fan_out:
 
 gradient_accumulation_steps: 4
-micro_batch_size: 4
-num_epochs: 1
-optimizer: adamw_bnb_8bit
+micro_batch_size: 8
+num_epochs: 2
+optimizer: paged_adamw_8bit
 lr_scheduler: cosine
-learning_rate: 0.0002
+learning_rate: 8e-5
 
 train_on_inputs: false
 group_by_length: false
